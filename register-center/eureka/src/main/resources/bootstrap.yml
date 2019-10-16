@@ -1,37 +1,15 @@
 
 spring:
   profiles:
-    active: debug
-
----
-spring:
-  profiles: test
-
-server:
-  port: 8761
-
----
-LOCAL_HOST: localhost
-
-spring:
-  profiles: debug
+    active: naked
   application:
     name: register-center
-#  security:
-#    user:
-#      name: shaun
-#      password: pwd
 
 server:
   port: 8761
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://${LOCAL_HOST}:${server.port}/eureka/
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${LOCAL_HOST}:${server.port}/eureka/
-    register-with-eureka: true
-#    register-with-eureka: true
     fetch-registry: false
     registry-fetch-interval-seconds: 5
   instance:
@@ -56,3 +34,28 @@ logging:
   level:
     root: info
   file: logs/${spring.application.name}.log
+
+---
+spring:
+  profiles: naked
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+    register-with-eureka: false
+---
+spring:
+  profiles: security
+  security:
+    user:
+      name: shaun
+      password: pwd123
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+    register-with-eureka: false
+
+
