@@ -1,6 +1,4 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
 
@@ -13,15 +11,8 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.audit4j:audit4j-core:2.5.0'
-	implementation 'org.audit4j:audit4j-spring:2.5.0'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-}
-
-test {
-	useJUnitPlatform()
+	implementation "org.springframework.boot:spring-boot-starter:${spring_boot_version}"
+	implementation "org.springframework.boot:spring-boot-starter-security:${spring_boot_version}"
+	implementation "org.audit4j:audit4j-core:${audit4j_version}"
+	implementation "org.audit4j:audit4j-spring:${audit4j_version}"
 }
