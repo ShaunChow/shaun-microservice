@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.shaun.autoconfigure.sms.qcloud.SmsService
+  com.shaun.autoconfigure.sms.qcloud.QcloudSmsProperties

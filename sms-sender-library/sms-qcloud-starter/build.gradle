@@ -12,4 +12,6 @@ repositories {
 
 dependencies {
 	implementation "org.springframework.boot:spring-boot-starter:${spring_boot_version}"
+	implementation "org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}"
+	implementation "com.github.qcloudsms:qcloudsms:${qcloud_sms_version}"
 }

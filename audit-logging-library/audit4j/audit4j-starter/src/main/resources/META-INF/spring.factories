@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.shaun.autoconfigure.audit4j.config.AuditLoggingConfig
+  com.shaun.autoconfigure.audit4j.config.AuditLoggingConfig
