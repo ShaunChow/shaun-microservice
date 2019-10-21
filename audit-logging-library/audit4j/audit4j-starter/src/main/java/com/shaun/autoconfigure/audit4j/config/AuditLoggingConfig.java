@@ -1,7 +1,7 @@
-package com.shaun.audit4jstarter.config;
+package com.shaun.autoconfigure.audit4j.config;
 
 
-import com.shaun.audit4jstarter.AuditMetaData;
+import com.shaun.autoconfigure.audit4j.AuditMetaData;
 import org.audit4j.core.handler.ConsoleAuditHandler;
 import org.audit4j.core.handler.Handler;
 import org.audit4j.core.handler.file.FileAuditHandler;
@@ -24,8 +24,7 @@ public class AuditLoggingConfig {
 
     @Bean
     public AuditAspect auditAspect() {
-        AuditAspect auditAspect = new AuditAspect();
-        return auditAspect;
+        return new AuditAspect();
     }
 
     // If you want to load configurations from file
@@ -40,7 +39,7 @@ public class AuditLoggingConfig {
 
 
     private Map<String,String> getProperties() {
-        Map<String,String> properties = new HashMap<String,String>();
+        Map<String,String> properties = new HashMap<>();
 
         properties.put("log.file.location", ".");
 
@@ -49,9 +48,8 @@ public class AuditLoggingConfig {
 
     @Bean
     public FileAuditHandler fileAuditHandler() {
-        FileAuditHandler fileAuditHandler = new FileAuditHandler();
 
-        return fileAuditHandler;
+        return new FileAuditHandler();
     }
 
     // If you want t o load configurations from file
@@ -61,7 +59,7 @@ public class AuditLoggingConfig {
     public SpringAudit4jConfig springAudit4jConfig() {
         SpringAudit4jConfig springAudit4jConfig = new SpringAudit4jConfig();
         springAudit4jConfig.setLayout(new SimpleLayout());
-        List<Handler> handlers = new ArrayList<Handler>();
+        List<Handler> handlers = new ArrayList<>();
         handlers.add(new ConsoleAuditHandler());
 
         //handlers.add(databaseHandler());

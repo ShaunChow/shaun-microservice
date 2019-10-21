@@ -1,4 +1,4 @@
-package com.shaun.audit4jstarter;
+package com.shaun.autoconfigure.audit4j;
 
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class AuditMetaData implements MetaData {
     @Override
     public String getOrigin() {
         try {
-            return ((ServletRequest)((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest()).getRemoteAddr();
+            return ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getRemoteAddr();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -39,7 +39,7 @@ public class AuditMetaData implements MetaData {
     //how to have a string giving the list of roles that the user has
     private String getRoles() {
 
-        List<String> roles = new ArrayList<String>();
+        List<String> roles = new ArrayList<>();
         for( GrantedAuthority author :SecurityContextHolder.getContext().getAuthentication().getAuthorities()) {
             roles.add(author.toString());
         }
