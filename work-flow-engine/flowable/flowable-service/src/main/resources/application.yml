@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+  application:
+    name: flowable
+
+  datasource:
+    url: jdbc:postgresql://192.168.99.100:5432/flowable_idm
+    username: docker
+    password: shaun
+    driver-class-name: org.postgresql.Driver
+  jmx:
+    default-domain: ${spring.application.name}
