@@ -1,4 +1,4 @@
-package com.shaun.iam.oauth2server.config;
+package com.shaun.iam.oauth2server.authorization.config;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

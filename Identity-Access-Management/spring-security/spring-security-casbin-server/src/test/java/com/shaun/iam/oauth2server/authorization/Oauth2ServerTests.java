@@ -1,4 +1,4 @@
-package com.shaun.iam.oauth2server;
+package com.shaun.iam.oauth2server.authorization;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
